@@ -41,7 +41,7 @@ namespace CircleCircleTest
 
 			_clock = new GameClock();
 			_inputState = new InputState();
-			_inputWrapper = new InputWrapper(PlayerIndex.One, _clock.GetCurrentTime);
+			_inputWrapper = new InputWrapper(new ControllerWrapper(PlayerIndex.One, true), _clock.GetCurrentTime);
 			_inputWrapper.Controller.UseKeyboard = true;
 		}
 
@@ -53,6 +53,13 @@ namespace CircleCircleTest
 		/// </summary>
 		protected override void Initialize()
 		{
+			Setup();
+
+			base.Initialize();
+		}
+
+		private void Setup()
+		{
 			//init the blue circle so it will be on the left of the screen
 			_circle1.Initialize(new Vector2(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - 300,
 				graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.Y), 80.0f);
@@ -61,8 +68,6 @@ namespace CircleCircleTest
 			_circle2.Initialize(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center, 80.0f);
 
 			_clock.Start();
-
-			base.Initialize();
 		}
 
 		/// <summary>
@@ -106,21 +111,26 @@ namespace CircleCircleTest
 
 			//move the circle
 			float movespeed = 3200.0f;
-			if (_inputWrapper.Controller.KeystrokeHeld[(int)EKeystroke.Up])
+			if (_inputWrapper.Controller.CheckKeystroke(EKeystroke.Up, false, Vector2.UnitX))
 			{
 				_circle1.Translate(0.0f, -movespeed * _clock.TimeDelta);
 			}
-			else if (_inputWrapper.Controller.KeystrokeHeld[(int)EKeystroke.Down])
+			else if (_inputWrapper.Controller.CheckKeystroke(EKeystroke.Down, false, Vector2.UnitX))
 			{
 				_circle1.Translate(0.0f, movespeed * _clock.TimeDelta);
 			}
-			else if (_inputWrapper.Controller.KeystrokeHeld[(int)EKeystroke.Forward])
+			else if (_inputWrapper.Controller.CheckKeystroke(EKeystroke.Forward, false, Vector2.UnitX))
 			{
 				_circle1.Translate(movespeed * _clock.TimeDelta, 0.0f);
 			}
-			else if (_inputWrapper.Controller.KeystrokeHeld[(int)EKeystroke.Back])
+			else if (_inputWrapper.Controller.CheckKeystroke(EKeystroke.Back, false, Vector2.UnitX))
 			{
 				_circle1.Translate(-movespeed * _clock.TimeDelta, 0.0f);
+			}
+
+			if (_inputWrapper.Controller.CheckKeystroke(EKeystroke.A))
+			{
+				Setup();
 			}
 
 			base.Update(gameTime);
