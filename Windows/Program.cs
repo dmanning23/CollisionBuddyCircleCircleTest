@@ -1,8 +1,6 @@
-using System;
 
-namespace CircleCircleTest
+namespace CollisionBuddyCircleCircleTest.Windows
 {
-#if WINDOWS || XBOX
     static class Program
     {
         /// <summary>
@@ -16,6 +14,4 @@ namespace CircleCircleTest
             }
         }
     }
-#endif
 }
-
