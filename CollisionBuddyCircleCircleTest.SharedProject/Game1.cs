@@ -1,13 +1,10 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using BasicPrimitiveBuddy;
+using PrimitiveBuddy;
 using CollisionBuddy;
 using GameTimer;
 using HadoukInput;
@@ -98,7 +95,9 @@ namespace CollisionBuddyCircleCircleTest
 			if ((GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed) || 
 				Keyboard.GetState().IsKeyDown(Keys.Escape))
 			{
+#if !__IOS__
 				this.Exit();
+#endif
 			}
 
 			//update the timer
@@ -155,7 +154,7 @@ namespace CollisionBuddyCircleCircleTest
 			spriteBatch.Begin();
 
 			//draw the circles
-			XNABasicPrimitive circlePrim = new XNABasicPrimitive(graphics.GraphicsDevice, spriteBatch);
+			var circlePrim = new Primitive(graphics.GraphicsDevice, spriteBatch);
 			circlePrim.Circle(_circle1.Pos, _circle1.Radius, circleColor);
 			circlePrim.Circle(_circle2.Pos, _circle2.Radius, circleColor);
 
