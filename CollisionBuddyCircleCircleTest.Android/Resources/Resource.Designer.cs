@@ -26,24 +26,6 @@ namespace CollisionBuddyCircleCircleTest.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::CollisionBuddy.Android.Resource.String.ApplicationName = global::CollisionBuddyCircleCircleTest.Android.Resource.String.ApplicationName;
-			global::CollisionBuddy.Android.Resource.String.Hello = global::CollisionBuddyCircleCircleTest.Android.Resource.String.Hello;
-			global::FilenameBuddy.Android.Resource.String.ApplicationName = global::CollisionBuddyCircleCircleTest.Android.Resource.String.ApplicationName;
-			global::FilenameBuddy.Android.Resource.String.Hello = global::CollisionBuddyCircleCircleTest.Android.Resource.String.Hello;
-			global::GameTimer.Android.Resource.String.ApplicationName = global::CollisionBuddyCircleCircleTest.Android.Resource.String.ApplicationName;
-			global::GameTimer.Android.Resource.String.Hello = global::CollisionBuddyCircleCircleTest.Android.Resource.String.Hello;
-			global::HadoukInput.Android.Resource.String.ApplicationName = global::CollisionBuddyCircleCircleTest.Android.Resource.String.ApplicationName;
-			global::HadoukInput.Android.Resource.String.Hello = global::CollisionBuddyCircleCircleTest.Android.Resource.String.Hello;
-			global::MatrixExtensions.Android.Resource.String.ApplicationName = global::CollisionBuddyCircleCircleTest.Android.Resource.String.ApplicationName;
-			global::MatrixExtensions.Android.Resource.String.Hello = global::CollisionBuddyCircleCircleTest.Android.Resource.String.Hello;
-			global::PrimitiveBuddy.Android.Resource.String.ApplicationName = global::CollisionBuddyCircleCircleTest.Android.Resource.String.ApplicationName;
-			global::PrimitiveBuddy.Android.Resource.String.Hello = global::CollisionBuddyCircleCircleTest.Android.Resource.String.Hello;
-			global::RandomExtensions.Android.Resource.String.ApplicationName = global::CollisionBuddyCircleCircleTest.Android.Resource.String.ApplicationName;
-			global::RandomExtensions.Android.Resource.String.Hello = global::CollisionBuddyCircleCircleTest.Android.Resource.String.Hello;
-			global::Vector2Extensions.Android.Resource.String.ApplicationName = global::CollisionBuddyCircleCircleTest.Android.Resource.String.ApplicationName;
-			global::Vector2Extensions.Android.Resource.String.Hello = global::CollisionBuddyCircleCircleTest.Android.Resource.String.Hello;
-			global::XmlBuddy.Android.Resource.String.ApplicationName = global::CollisionBuddyCircleCircleTest.Android.Resource.String.ApplicationName;
-			global::XmlBuddy.Android.Resource.String.Hello = global::CollisionBuddyCircleCircleTest.Android.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
